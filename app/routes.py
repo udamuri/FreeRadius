@@ -4,4 +4,4 @@ from app.controller import EmployeeController
 @app.route('/')
 @app.route('/index')
 def index():
-    return EmployeeController.index()
+    return EmployeeController.welcome()
