@@ -5,7 +5,7 @@ def mysql():
     connection = pymysql.connect(host=str("127.0.0.1"),
                              user=str("root"),
                              password=str("123456"),
-                             db=str("flask_employee"),
+                             db=str("radius"),
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
 
