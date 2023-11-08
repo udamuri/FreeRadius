@@ -3,7 +3,15 @@ from flask import request
 connection = config.mysql()
         
 def index():
-    return response.ok(True, [], "Freeradius api v1.0")
+    try:
+        page = pagex(request)
+        with connection.cursor() as cursor:
+            sql = "SELECT * FROM `plans` LIMIT 10 OFFSET %s"
+            cursor.execute(sql, (page))
+            result = cursor.fetchall()
+            return response.ok(True, result, "Plans")
+    except Exception as e:
+        return response.badRequest(e, "Bad Request")
 
 def store():
     name = request.json.get("name")
@@ -107,3 +115,13 @@ def form_validate(re):
         error_messages['upload'] = 'Upload must be a number and minimum 1'
 
     return error_messages
+
+def pagex(req):
+    args = req.args
+    if args['page'] and args['page'].isnumeric():
+        if int(args['page']) > 0:
+            return int(args['page']) - 1
+        else:
+            return 0
+    else:
+        return 0
