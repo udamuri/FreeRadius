@@ -14,3 +14,7 @@ def plan_index():
 @app.route('/plan/store', methods=['POST'])
 def plan_store():
     return PlanController.store()
+
+@app.route('/plan/store/<id>', methods=['POST'])
+def plan_edit(id):
+    return PlanController.update(id)
