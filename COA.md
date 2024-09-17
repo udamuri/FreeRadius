@@ -88,9 +88,9 @@ Berikut adalah langkah-langkah umum untuk mengatur CoA pada FreeRADIUS:
         <li>
             Contoh perintah untuk mengirim CoA:
             ```
-            radtest -x <username> <password> <server_ip> <port> <attribute> <value>
+            radtest -x &lt;username&gt;  &lt;password&gt;  &lt;server_ip&gt;  &lt;port&gt;  &lt;attribute&gt;  &lt;value&gt;
             ```
-            <p>Gantilah <username>, <password>, <server_ip>, <port>, <attribute>, dan <value> sesuai dengan pengaturan Anda.</p>
+            <p>Gantilah &lt;username&gt;,  &lt;password&gt;,  &lt;server_ip&gt;,  &lt;port&gt;,  &lt;attribute&gt;, dan  &lt;value&gt; sesuai dengan pengaturan Anda.</p>
         </li>
     </ul>
   </li>
