@@ -30,14 +30,14 @@ Berikut adalah langkah-langkah umum untuk mengatur CoA pada FreeRADIUS:
                 <li>Buka file clients.conf yang biasanya terletak di /etc/freeradius/3.0/clients.conf.</li>
                 <li>
                     Tambahkan atau sesuaikan entri untuk klien yang mendukung CoA. Contoh entri:
-                    ```
+                    <pre><code>
                         client example-client {
                             ipaddr = 192.168.1.100
                             secret = testing123
                             coa = yes
                             nas_type = other
                         }
-                    ```
+                    </code></pre>
                 </li>
                 <li>coa = yes menunjukkan bahwa klien ini mendukung CoA.</li>
             </ul>
@@ -49,7 +49,7 @@ Berikut adalah langkah-langkah umum untuk mengatur CoA pada FreeRADIUS:
                 <li>Pastikan file ini di-link ke mods-enabled/ dengan menggunakan ln -s.</li>
                 <li>
                     Contoh pengaturan CoA:
-                    ```
+                    <pre><code>
                     coa {
                         # Define the port for CoA requests
                         listen {
@@ -57,7 +57,7 @@ Berikut adalah langkah-langkah umum untuk mengatur CoA pada FreeRADIUS:
                             port = 3799
                         }
                     }
-                    ```
+                    </code></pre>
                 </li>
             </ul>
         </li>
@@ -73,9 +73,9 @@ Berikut adalah langkah-langkah umum untuk mengatur CoA pada FreeRADIUS:
             <ul>
                 <li>
                     Setelah Anda melakukan perubahan konfigurasi, restart FreeRADIUS untuk menerapkan perubahan:
-                    ```
+                    <pre><code>
                     sudo systemctl restart freeradius
-                    ```
+                    </code></pre>
                 </li>
             </ul>
         </li>
@@ -87,9 +87,9 @@ Berikut adalah langkah-langkah umum untuk mengatur CoA pada FreeRADIUS:
         <li>Gunakan alat pengujian seperti radtest atau radtest-coa untuk mengirimkan permintaan CoA ke server FreeRADIUS dan memverifikasi bahwa server merespons dengan benar.</li>
         <li>
             Contoh perintah untuk mengirim CoA:
-            ```
+            <pre><code>
             radtest -x &lt;username&gt;  &lt;password&gt;  &lt;server_ip&gt;  &lt;port&gt;  &lt;attribute&gt;  &lt;value&gt;
-            ```
+            </code></pre>
             <p>Gantilah &lt;username&gt;,  &lt;password&gt;,  &lt;server_ip&gt;,  &lt;port&gt;,  &lt;attribute&gt;, dan  &lt;value&gt; sesuai dengan pengaturan Anda.</p>
         </li>
     </ul>
